@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :rememberable,
          :validatable,
          :trackable
+
+  has_many :experiences
 end
