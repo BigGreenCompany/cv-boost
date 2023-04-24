@@ -4,5 +4,5 @@
   <%= link_to "Edit this ai message", edit_experience_ai_message_path(@experience, @ai_message) %> |
   <%= link_to "Back to ai messages", experience_ai_messages_path %>
 
-  <%= button_to "Destroy this ai message", experience_ai_message_path(@experience, @ai_message), method: :delete %>
+  <%= button_to "Destroy this ai message", experience_ai_message_path(@experience, @ai_message), method: :delete, class: "btn btn-danger" %>
 </div>
