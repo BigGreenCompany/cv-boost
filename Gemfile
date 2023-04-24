@@ -32,3 +32,4 @@ gem "bootsnap", require: false
 gem "devise", "~> 4.9"
 gem 'bootstrap', '~> 5.2', '>= 5.2.3'
 gem 'sass-rails', '~> 6.0'
+gem 'actiontext', require: 'action_text'

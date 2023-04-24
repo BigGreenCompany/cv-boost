@@ -4,8 +4,8 @@ class CreateExperiences < ActiveRecord::Migration[7.0]
       t.string :place
       t.date :started_at
       t.date :ended_at
+      t.string :title
       t.string :location
-      t.text :description
       t.string :category
       t.references :user, null: false, foreign_key: true
 

@@ -6,4 +6,16 @@ class Experience < ApplicationRecord
     work: "work",
     education: "education"
   }
+
+  has_rich_text :description
+
+  validate :description_cannot_include_attachments
+
+  private
+
+  def description_cannot_include_attachments
+    if description.body.attachments.any?
+      errors.add(:description, "cannot include attachments")
+    end
+  end
 end

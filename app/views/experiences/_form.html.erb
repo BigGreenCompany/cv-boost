@@ -38,7 +38,7 @@
 
   <div>
     <%= form.label :description, class: "form-label" %>
-    <%= form.text_area :description, class: "form-control", rows: 10 %>
+    <%= form.rich_text_area :description, class: "form-control", rows: 10, data: { "action-text-attachment-include": false } %>
   </div>
 
   <div>
