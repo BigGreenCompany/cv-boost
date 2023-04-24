@@ -1,8 +1,9 @@
-<%= render @experience %>
+<div class="container my-5">
+  <div class="d-flex justify-content-between">
+    <%= link_to "Edit this experience", edit_experience_path(@experience) %>
+    <%= link_to "Back to experiences", experiences_path %>
+    <%= button_to "Destroy this experience", @experience, method: :delete, data: { "turbo-method": :delete, "turbo-confirm": "Are you sure? This is NOT reversible" }, class: "btn btn-danger" %>
+  </div>
 
-<div>
-  <%= link_to "Edit this experience", edit_experience_path(@experience) %> |
-  <%= link_to "Back to experiences", experiences_path %>
-
-  <%= button_to "Destroy this experience", @experience, method: :delete, data: { "turbo-method": :delete, "turbo-confirm": "Are you sure? This is NOT reversible" }, class: "btn btn-danger" %>
+  <%= render @experience %>
 </div>
