@@ -65,13 +65,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_173424) do
     t.string "place"
     t.date "started_at"
     t.date "ended_at"
+    t.string "title"
     t.string "location"
-    t.text "description"
     t.string "category"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "title"
     t.index ["user_id"], name: "index_experiences_on_user_id"
   end
 

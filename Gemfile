@@ -10,6 +10,7 @@ end
 group :development do
   gem "web-console"
   gem "rack-mini-profiler", require: false
+  gem "faker"
 end
 
 group :test do

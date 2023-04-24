@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+emails = %w[
+  ian@biggreen.company
+]
+
+user_info = emails.map { |email| {email: email, password: "password"} }
+
+users = User.create(user_info)
