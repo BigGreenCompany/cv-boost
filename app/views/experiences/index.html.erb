@@ -1,12 +1,13 @@
-<h1>Experiences</h1>
-<%= link_to "New experience", new_experience_path %>
+<div class="container my-5">
+  <h1>Experiences</h1>
+  <%= link_to "New experience", new_experience_path %>
 
-<div id="experiences">
-  <% @experiences.each do |experience| %>
-    <%= render experience %>
-    <p>
-      <%= link_to "Show this experience", experience %>
-    </p>
-  <% end %>
+  <div id="experiences">
+    <% @experiences.each do |experience| %>
+      <%= render experience %>
+      <p>
+        <%= link_to "Show this experience", experience %>
+      </p>
+    <% end %>
+  </div>
 </div>
-
