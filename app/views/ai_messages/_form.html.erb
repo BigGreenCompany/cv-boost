@@ -11,11 +11,8 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.text_area :content, class: "form-control" %>
-  </div>
-
-  <div>
-    <%= form.submit "Submit", class: "btn btn-primary my-2" %>
+  <div class="input-group mb-3">
+    <%= form.text_area :content, rows: 6, class: "form-control", placeholder: "How you can I improve this description?" %>
+    <%= form.submit "Send", class: "btn btn-primary" %>
   </div>
 <% end %>
