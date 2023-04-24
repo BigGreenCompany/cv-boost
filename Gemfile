@@ -30,6 +30,5 @@ gem "redis", "~> 4.0"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem "devise", "~> 4.9"
-
-
-
+gem 'bootstrap', '~> 5.2', '>= 5.2.3'
+gem 'sass-rails', '~> 6.0'
