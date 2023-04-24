@@ -30,7 +30,7 @@ namespace :dev do
         location: "#{Faker::Address.city}, #{Faker::Address.state_abbr}",
         description: Faker::GreekPhilosophers.quote,
         category: :work,
-        title: Faker::Company.profession
+        title: Faker::Company.profession.titleize
       )
     end
   end
