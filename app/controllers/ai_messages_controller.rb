@@ -27,7 +27,7 @@ class AiMessagesController < ApplicationController
 
     respond_to do |format|
       if @ai_message.save
-        format.html { redirect_to experience_ai_messages_url(@experience, @ai_message), notice: "Ai message was successfully created." }
+        format.html { redirect_to experience_url(@experience), notice: "Ai message was successfully created." }
         format.json { render :show, status: :created, location: @ai_message }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class AiMessagesController < ApplicationController
   def update
     respond_to do |format|
       if @ai_message.update(ai_message_params)
-        format.html { redirect_to experience_ai_message_url(@ai_message), notice: "Ai message was successfully updated." }
+        format.html { redirect_to experience_url(@experience), notice: "Ai message was successfully updated." }
         format.json { render :show, status: :ok, location: @ai_message }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class AiMessagesController < ApplicationController
     @ai_message.destroy
 
     respond_to do |format|
-      format.html { redirect_to experience_ai_messages_url(@experience), notice: "Ai message was successfully destroyed." }
+      format.html { redirect_to experience_url(@experience), notice: "Ai message was successfully destroyed." }
       format.json { head :no_content }
     end
   end

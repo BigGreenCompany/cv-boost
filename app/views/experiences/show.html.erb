@@ -1,4 +1,5 @@
 <div class="container my-5">
+  <h1>Experience <%= @experience.id %></h1>
   <div class="d-flex justify-content-between">
     <%= link_to "Edit this experience", edit_experience_path(@experience) %>
     <%= link_to "Back to experiences", experiences_path %>
@@ -6,4 +7,13 @@
   </div>
 
   <%= render @experience %>
+
+  <div class="border p-2">
+    <div id="experience-ai-messages">
+      <% @experience.ai_messages.each do |ai_message| %>
+        <%= render ai_message %>
+      <% end %>
+    </div>
+    <%= render "ai_messages/form", ai_message: @experience.ai_messages.new %>
+  </div>
 </div>
