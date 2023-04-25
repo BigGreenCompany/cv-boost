@@ -8,6 +8,13 @@
       <div class="navbar-nav">
         <%= link_to "Home", root_path, class: "nav-link #{("active" if current_page?(root_path))}" %>
         <%= link_to "Experiences", experiences_path, class: "nav-link #{("active" if current_page?(experiences_path))}" %>
+        <hr>
+        <% if current_user.present? %>
+          <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link btn btn-link" %>
+        <% else %>
+          <%= link_to "Sign In", new_user_session_path, class: "nav-link #{("active" if current_page?(new_user_session_path))}" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "nav-link #{("active" if current_page?(new_user_registration_path))}" %>
+        <% end %>
       </div>
     </div>
   </div>
