@@ -23,7 +23,6 @@ class AiMessagesController < ApplicationController
   # POST /ai_messages or /ai_messages.json
   def create
     @ai_message = @experience.ai_messages.new(ai_message_params)
-    @ai_message.role = :user
 
     respond_to do |format|
       if @ai_message.save
@@ -34,6 +33,9 @@ class AiMessagesController < ApplicationController
         format.json { render json: @ai_message.errors, status: :unprocessable_entity }
       end
     end
+  rescue AiMessage::OpenAiUnavailable => e
+    flash[:alert] = e.message
+    redirect_to experience_url(@experience)
   end
 
   # PATCH/PUT /ai_messages/1 or /ai_messages/1.json

@@ -1,6 +1,12 @@
 require "openai"
 
 class AiMessage < ApplicationRecord
+  class OpenAiUnavailable < StandardError
+    def message
+      "An error occurred while communicating with OpenAI. Please try again later."
+    end
+  end
+
   belongs_to :experience
 
   attribute :role, :string, default: 'user'
@@ -12,7 +18,6 @@ class AiMessage < ApplicationRecord
   def query_chat_gpt
     if role == "user"
       client = OpenAI::Client.new(access_token: Rails.application.credentials.dig(:openai, :access_token))
-
       response = client.chat(
         parameters: {
           model: "gpt-3.5-turbo",
@@ -21,7 +26,9 @@ class AiMessage < ApplicationRecord
           temperature: 0.7
         }
       )
-      experience.ai_messages.create(response.dig("choices", 0, "message"))
+      raise OpenAiUnavailable unless response.success?
+      ai_message = response.dig("choices", 0, "message")
+      experience.ai_messages.create(ai_message) unless ai_message.nil?
     end
   end
 end
