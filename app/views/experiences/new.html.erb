@@ -1,7 +1,9 @@
 <div class="container my-5">
-  <h1>New experience</h1>
-  <div>
-    <%= link_to "Back to experiences", experiences_path %>
+  <div class="mb-2">
+    <%= link_to experiences_path do %>
+      <i class="fa-solid fa-arrow-left fa-2xl"></i>
+    <% end %>
   </div>
+  <h1>New experience</h1>
   <%= render "form", experience: @experience %>
 </div>
