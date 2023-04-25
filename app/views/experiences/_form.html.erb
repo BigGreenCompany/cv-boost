@@ -38,7 +38,7 @@
 
   <div>
     <%= form.label :description, class: "form-label" %>
-    <%= form.rich_text_area :description, class: "form-control", rows: 10, data: { "action-text-attachment-include": false } %>
+    <%= form.rich_text_area :description, id: "experience-description-rich-text-area", class: "form-control", data: { "action-text-attachment-include": false } %>
   </div>
 
   <div>
@@ -47,6 +47,6 @@
   </div>
 
   <div>
-    <%= form.submit "Submit", class: "btn btn-primary my-2" %>
+    <%= form.submit "Save", class: "btn btn-primary my-3 w-100" %>
   </div>
 <% end %>
