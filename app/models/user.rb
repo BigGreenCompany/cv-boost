@@ -6,5 +6,5 @@ class User < ApplicationRecord
          :validatable,
          :trackable
 
-  has_many :experiences
+  has_many :experiences, dependent: :destroy
 end

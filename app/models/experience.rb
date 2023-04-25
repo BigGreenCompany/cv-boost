@@ -1,6 +1,6 @@
 class Experience < ApplicationRecord
   belongs_to :user
-  has_many :ai_messages
+  has_many :ai_messages, dependent: :destroy
 
   enum category: {
     work: "work",
