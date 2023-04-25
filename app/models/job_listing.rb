@@ -10,4 +10,8 @@ class JobListing < ApplicationRecord
   has_rich_text :description
 
   scope :default_order, -> { order(created_at: :desc) }
+
+  def to_s
+    "#{title} at #{employer}"
+  end
 end

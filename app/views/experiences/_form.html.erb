@@ -47,6 +47,11 @@
   </div>
 
   <div>
+    <%= form.label :job_listing, class: "form-label" %>
+    <%= form.select :job_listing_id, current_user.job_listings.collect {|job| [ job.to_s, job.id ] }, { include_blank: true }, class: "form-control" %>
+  </div>
+
+  <div>
     <%= form.submit "Save", class: "btn btn-primary my-3 w-100" %>
   </div>
 <% end %>

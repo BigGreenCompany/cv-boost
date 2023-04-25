@@ -26,5 +26,13 @@
     <p>
       <%= experience.description %>
     </p>
+
+  </div>
+  <div class="card-footer">
+    <% if experience.job_listing.present? %>
+      Applying for <%= experience.job_listing.title %> at <%= experience.job_listing.employer %>
+    <% else %>
+      Add a job listing to this experience for custom tailored suggestions.
+    <% end %>
   </div>
 </div>
