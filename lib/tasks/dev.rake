@@ -1,13 +1,15 @@
 namespace :dev do
-  desc "Destroy, re-create, re-seed, and re-prime the database"
-  task reprime: [
-    :environment,
-    "db:drop",
-    "db:create",
-    "db:migrate",
-    "db:seed",
-    "dev:prime"
-  ]
+  if ENV['RAILS_ENV'] != 'production'
+    desc "Destroy, re-create, re-seed, and re-prime the database"
+    task reprime: [
+      :environment,
+      "db:drop",
+      "db:create",
+      "db:migrate",
+      "db:seed",
+      "dev:prime"
+    ]
+  end
 
   desc "Hydrate the database with sample data"
   task prime: :environment do

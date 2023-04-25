@@ -10,7 +10,6 @@ end
 group :development do
   gem "web-console"
   gem "rack-mini-profiler", require: false
-  gem "faker"
 end
 
 group :test do
@@ -35,3 +34,4 @@ gem 'bootstrap', '~> 5.2', '>= 5.2.3'
 gem 'sass-rails', '~> 6.0'
 gem 'actiontext', require: 'action_text'
 gem "ruby-openai", "~> 3.7"
+gem "faker"
