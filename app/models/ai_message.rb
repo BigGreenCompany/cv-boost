@@ -25,7 +25,7 @@ class AiMessage < ApplicationRecord
         parameters: {
           model: "gpt-3.5-turbo",
           # TODO: save system prompt on first message instead?
-          messages: experience.ai_messages.select(:role, :content).to_a.prepend({role: "system", content: experience.prompt}),
+          messages: experience.ai_messages.select(:role, :content).to_a.prepend({role: "system", content: experience.prompt}, {role: "system", content: "please respond using markdown"}),
           temperature: 0.7
         }
       )

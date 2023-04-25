@@ -13,4 +13,10 @@ module ApplicationHelper
         flash_type.to_s
     end
   end
+
+  def markdown(text)
+    renderer = Redcarpet::Render::HTML.new
+    markdown = Redcarpet::Markdown.new(renderer, :fenced_code_blocks => true, :tables => true)
+    markdown.render(text).html_safe
+  end
 end
