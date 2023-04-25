@@ -33,7 +33,7 @@ class AiMessagesController < ApplicationController
         format.json { render json: @ai_message.errors, status: :unprocessable_entity }
       end
     end
-  rescue AiMessage::OpenAiUnavailable => e
+  rescue AiMessage::OpenAiError => e
     flash[:alert] = e.message
     redirect_to experience_url(@experience)
   end

@@ -1,7 +1,7 @@
 require "openai"
 
 class AiMessage < ApplicationRecord
-  class OpenAiUnavailable < StandardError
+  class OpenAiError < StandardError
     def message
       "An error occurred while communicating with OpenAI. Please try again later."
     end
@@ -25,11 +25,11 @@ class AiMessage < ApplicationRecord
         parameters: {
           model: "gpt-3.5-turbo",
           # TODO: save system prompt on first message instead?
-          messages: experience.ai_messages.select(:role, :content).to_a.prepend({role: "system", content: experience.prompt}, {role: "system", content: "please respond using markdown"}),
+          messages: experience.ai_messages.map{|m| {role: m.role, content: m.content} }.to_a.prepend({role: "system", content: experience.prompt}, {role: "system", content: "please respond using markdown"}),
           temperature: 0.7
         }
       )
-      raise OpenAiUnavailable unless response.success?
+      raise OpenAiError unless response.success?
       ai_message = response.dig("choices", 0, "message")
       experience.ai_messages.create(ai_message) unless ai_message.nil?
     end
