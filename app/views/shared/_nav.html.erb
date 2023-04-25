@@ -13,8 +13,12 @@
           <%= link_to "Experiences", experiences_path, class: "nav-link #{("active" if current_page?(experiences_path))}" %>
         </li>
       </ul>
+      <hr/>
       <ul class="navbar-nav">
         <% if current_user.present? %>
+          <li class="nav-item">
+            <%= link_to "Edit Profile", edit_user_registration_path, class: "nav-link #{("active" if current_page?(edit_user_registration_path))}" %>
+          </li>
           <li class="nav-item">
             <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link btn btn-link" %>
           </li>
