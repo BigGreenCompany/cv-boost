@@ -29,7 +29,7 @@
 
   <div>
     <%= form.label :job_type %>
-    <%= form.select :job_type, JobListing.job_types.to_a, {}, class: "form-control" %>
+    <%= form.select :job_type, JobListing.job_types.collect{ |k, v| [v, k]}, {}, class: "form-control" %>
   </div>
 
   <div>
