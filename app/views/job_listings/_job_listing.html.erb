@@ -14,7 +14,7 @@
     <p><%= job_listing.title %></p>
 
     <p>
-      <%= JobListing.job_types.dig(job_listing.job_type) %>
+      <%= JobListing.job_types.dig(job_listing.job_type).titleize %>
     </p>
 
     <p>
