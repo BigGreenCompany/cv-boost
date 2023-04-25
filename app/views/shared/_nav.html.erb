@@ -1,21 +1,32 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <%= link_to "CV Boost", root_path, class: "navbar-brand" %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <%= link_to "Home", root_path, class: "nav-link #{("active" if current_page?(root_path))}" %>
-        <%= link_to "Experiences", experiences_path, class: "nav-link #{("active" if current_page?(experiences_path))}" %>
-        <hr>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: "nav-link #{("active" if current_page?(root_path))}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Experiences", experiences_path, class: "nav-link #{("active" if current_page?(experiences_path))}" %>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
         <% if current_user.present? %>
-          <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link btn btn-link" %>
+          <li class="nav-item">
+            <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link btn btn-link" %>
+          </li>
         <% else %>
-          <%= link_to "Sign In", new_user_session_path, class: "nav-link #{("active" if current_page?(new_user_session_path))}" %>
-          <%= link_to "Sign Up", new_user_registration_path, class: "nav-link #{("active" if current_page?(new_user_registration_path))}" %>
+          <li class="nav-item">
+            <%= link_to "Sign In", new_user_session_path, class: "nav-link #{("active" if current_page?(new_user_session_path))}" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link #{("active" if current_page?(new_user_registration_path))}" %>
+          </li>
         <% end %>
-      </div>
+      </ul>
     </div>
   </div>
 </nav>
