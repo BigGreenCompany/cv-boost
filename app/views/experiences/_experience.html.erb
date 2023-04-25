@@ -1,37 +1,30 @@
-<div id="<%= dom_id experience %>">
-  <p>
-    <strong>Place:</strong>
-    <%= experience.place %>
-  </p>
+<div id="<%= dom_id experience %>" class="card">
+  <div class="card-header">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <h1 class="me-auto mb-0 h6"><%= @experience.place %></h1>
+      <%= link_to edit_experience_path(@experience), class: "me-4" do %>
+        <i class="fa-solid fa-pen-to-square fa-2xl"></i>
+      <% end %>
+      <%= button_to @experience, method: :delete, data: { "turbo-method": :delete, "turbo-confirm": "Are you sure? This is NOT reversible" }, class: "btn btn-danger" do %>
+        <i class="fa-solid fa-trash fa-sm"></i>
+      <% end %>
+    </div>
+  </div>
+  <div class="card-body">
+    <p><%= experience.title %></p>
 
-  <p>
-    <strong>Title:</strong>
-    <%= experience.title %>
-  </p>
+    <p>
+      <%= experience.started_at.strftime("%B %Y") %> to <%= experience.ended_at.strftime("%B %Y") %>
+    </p>
 
-  <p>
-    <strong>Started at:</strong>
-    <%= experience.started_at %>
-  </p>
+    <p>
+      <%= experience.location %>
+    </p>
 
-  <p>
-    <strong>Ended at:</strong>
-    <%= experience.ended_at %>
-  </p>
+    <hr/>
 
-  <p>
-    <strong>Location:</strong>
-    <%= experience.location %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= experience.description %>
-  </p>
-
-  <p>
-    <strong>Category:</strong>
-    <%= experience.category %>
-  </p>
-
+    <p>
+      <%= experience.description %>
+    </p>
+  </div>
 </div>

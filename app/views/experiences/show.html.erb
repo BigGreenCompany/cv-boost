@@ -5,24 +5,14 @@
       <i class="fa-solid fa-arrow-left fa-2xl"></i>
     <% end %>
   </div>
-  <div class="d-flex justify-content-between align-items-center mb-2">
-    <h1 class="me-auto mb-0">Experience <%= @experience.id %></h1>
-    <%= link_to edit_experience_path(@experience), class: "me-4" do %>
-      <i class="fa-solid fa-pen-to-square fa-2xl"></i>
-    <% end %>
-    <%= button_to @experience, method: :delete, data: { "turbo-method": :delete, "turbo-confirm": "Are you sure? This is NOT reversible" }, class: "btn btn-danger" do %>
-      <i class="fa-solid fa-trash fa-sm"></i>
-    <% end %>
-  </div>
+  
 
   <%= render @experience %>
 
-  <div class="border p-2">
-    <div id="experience-ai-messages">
-      <% @experience.ai_messages.each do |ai_message| %>
-        <%= render ai_message %>
-      <% end %>
-    </div>
-    <%= render "ai_messages/form", ai_message: @experience.ai_messages.new %>
+  <div id="experience-ai-messages" class="my-3">
+    <% @experience.ai_messages.each do |ai_message| %>
+      <%= render ai_message %>
+    <% end %>
   </div>
+  <%= render "ai_messages/form", ai_message: @experience.ai_messages.new %>
 </div>
