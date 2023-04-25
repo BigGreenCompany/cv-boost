@@ -11,6 +11,9 @@ class AiMessage < ApplicationRecord
 
   attribute :role, :string, default: 'user'
 
+  validates :role, presence: true
+  validates :content, presence: true
+
   after_create :query_chat_gpt
 
   private

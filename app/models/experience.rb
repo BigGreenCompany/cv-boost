@@ -9,6 +9,9 @@ class Experience < ApplicationRecord
 
   has_rich_text :description
 
+  validates :started_at, presence: true
+  validates :place, presence: true
+  validates :title, presence: true
   validate :description_cannot_include_attachments
 
   def prompt
@@ -24,6 +27,8 @@ class Experience < ApplicationRecord
       ```
     TEXT
   end
+
+  scope :default_order, -> { order(started_at: :desc) }
 
   private
 
