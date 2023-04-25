@@ -11,7 +11,7 @@ class AiMessage < ApplicationRecord
 
   def query_chat_gpt
     if role == "user"
-      client = OpenAI::Client.new(access_token: Rails.application.credentials[:openai][:access_token])
+      client = OpenAI::Client.new(access_token: Rails.application.credentials.dig(:openai, :access_token))
 
       response = client.chat(
         parameters: {
