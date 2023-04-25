@@ -11,6 +11,20 @@ class Experience < ApplicationRecord
 
   validate :description_cannot_include_attachments
 
+  def prompt
+    <<~TEXT
+      You are an expert at reviewing resumes for job applications.
+      I want you to give feedback on how to improve this experience.
+      It is one of many in the #{category} experience section.
+      ```html
+      #{place}
+      #{title}
+      #{location}
+      #{description}
+      ```
+    TEXT
+  end
+
   private
 
   def description_cannot_include_attachments

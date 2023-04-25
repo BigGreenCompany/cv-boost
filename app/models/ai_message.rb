@@ -12,25 +12,12 @@ class AiMessage < ApplicationRecord
   def query_chat_gpt
     if role == "user"
       client = OpenAI::Client.new(access_token: Rails.application.credentials[:openai][:access_token])
-      system_prompt = <<~TEXT
-        You are an expert at reviewing resumes for job applications.
-        I want you to give feedback on how to improve this experience.
-        It is one of many in the work experience section.
-        ```html
-        #{experience.place}
-        #{experience.title}
-        #{experience.location}
-        #{experience.description}
-        ```
-      TEXT
+
       response = client.chat(
         parameters: {
           model: "gpt-3.5-turbo",
-          messages: [
-            {role: "system", content: system_prompt},
-            # TODO: add previous messages
-            {role: role, content: content}
-          ],
+          # TODO: save system prompt on first message instead?
+          messages: experience.ai_messages.select(:role, :content).to_a.prepend({role: "system", content: experience.prompt}),
           temperature: 0.7
         }
       )
