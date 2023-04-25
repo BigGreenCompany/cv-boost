@@ -18,10 +18,9 @@ namespace :dev do
     users = []
 
     usernames.each do |username|
-      users << User.find_by_email("#{username}@example.com") || User.create(
-        email: "#{username}@example.com",
-        password: "password"
-      )
+      users << User.find_or_create_by(email:"#{username}@example.com") do |u|
+        u.password = "password"
+      end
     end
 
     users.each do |user|
