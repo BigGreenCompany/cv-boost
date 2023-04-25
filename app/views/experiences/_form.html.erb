@@ -42,8 +42,8 @@
   </div>
 
   <div>
-    <%= form.label :category %>
-    <%= form.select :category, Experience.categories.keys, {}, class: "form-control" %>
+    <%= form.label :category, class: "form-label" %>
+    <%= form.select :category, Experience.categories.to_a, {}, class: "form-control" %>
   </div>
 
   <div>
