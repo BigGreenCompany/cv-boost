@@ -1,0 +1,26 @@
+<div class="container my-5">
+  <div class="card">
+    <div class="card-header d-flex align-items-center">
+      <h1 class="me-auto h6 mb-0">Job Listings</h1>
+      <%= link_to new_job_listing_path do %>
+        <i class="fa-solid fa-plus fa-lg"></i>
+      <% end %>
+    </div>
+    <ul id="job_listings" class="list-group list-group-flush">
+      <% @job_listings.each do |job_listing| %>
+        <%= link_to job_listing, class: "list-group-item d-flex align-items-center" do %>
+          <div class="me-auto">
+            <div class="badge bg-light text-dark me-2">
+              <%= JobListing.job_types.dig(job_listing.job_type) %>
+            </div>
+            <span class="fw-bold me-2"><%= job_listing.employer %></span>
+            <span><%= job_listing.title %></span>
+          </div>
+          <div>
+            <i class="fa-solid fa-chevron-right fa-fw"></i>
+          </div>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>

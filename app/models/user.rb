@@ -7,4 +7,5 @@ class User < ApplicationRecord
          :trackable
 
   has_many :experiences, dependent: :destroy
+  has_many :job_listings, dependent: :destroy
 end

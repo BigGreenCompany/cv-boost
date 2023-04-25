@@ -1,0 +1,48 @@
+<%= form_with(model: job_listing) do |form| %>
+  <% if job_listing.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(job_listing.errors.count, "error") %> prohibited this job_listing from being saved:</h2>
+
+      <ul>
+        <% job_listing.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div>
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :employer, class: "form-label" %>
+    <%= form.text_field :employer, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :location, class: "form-label" %>
+    <%= form.text_field :location, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :job_type %>
+    <%= form.select :job_type, JobListing.job_types.to_a, {}, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :external_url, class: "form-label" %>
+    <%= form.url_field :external_url, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :description, class: "form-label" %>
+    <%= form.rich_text_area :description, class: "form-control", id: "job-listing-description-rich-text-area" %>
+  </div>
+
+  <div>
+    <%= form.submit "Save", class: "btn btn-primary my-3 w-100" %>
+  </div>
+<% end %>
