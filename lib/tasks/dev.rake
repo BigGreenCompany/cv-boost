@@ -18,7 +18,7 @@ namespace :dev do
     users = []
 
     usernames.each do |username|
-      users << User.create(
+      users << User.find_by_email("#{username}@example.com") || User.create(
         email: "#{username}@example.com",
         password: "password"
       )
