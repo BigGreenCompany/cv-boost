@@ -18,8 +18,9 @@ class Experience < ApplicationRecord
   def prompt
     <<~TEXT
       You are an expert at reviewing resumes for job applications.
-      I want you to give feedback on how to improve this experience.
-      It is one of many in the #{category} experience section.
+      #{job_listing&.prompt}
+      I want you to give feedback on how to improve the description of this experience.
+      This experience is one of many in the #{category} experience section.
       ```html
       #{place}
       #{title}
