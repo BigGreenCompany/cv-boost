@@ -12,7 +12,7 @@
           <div class="me-auto">
             <div class="badge bg-light text-dark me-2">
               <%= experience.started_at.year %>
-              <%= "- #{experience.ended_at.year}" if experience.ended_at.year > experience.started_at.year %>
+              <%= "- #{experience.ended_at.year}" if experience.ended_at.present? && experience.ended_at.year > experience.started_at.year %>
             </div>
             <span class="fw-bold me-2"><%= experience.place %></span>
             <span><%= experience.title %></span>
