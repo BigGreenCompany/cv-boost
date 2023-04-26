@@ -14,7 +14,7 @@
     <p><%= experience.title %></p>
 
     <p>
-      <%= experience.started_at.strftime("%B %Y") %> to <%= experience.ended_at.strftime("%B %Y") %>
+      <%= experience.started_at.strftime("%B %Y") %> to <%= experience.ended_at&.strftime("%B %Y") %>
     </p>
 
     <p>
