@@ -1,7 +1,11 @@
 <div id="<%= dom_id ai_message %>">
   <p>
-    <strong><%= ai_message.role %></strong>
+    <div class="d-flex justify-content-between">
+      <strong><%= ai_message.role %></strong>
+      <%= button_to experience_ai_message_path(@experience, ai_message), method: :delete, data: { "turbo-method": :delete, "turbo-confirm": "Are you sure you want to delete this message?" }, class: "btn btn-link" do %>
+        <i class="fa-solid fa-x text-danger"></i>
+      <% end %>
+    </div>
     <%= markdown ai_message.content %>
   </p>
-
 </div>
