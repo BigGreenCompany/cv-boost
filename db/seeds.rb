@@ -10,6 +10,9 @@ emails = %w[
   ian@biggreen.company
 ]
 
-user_info = emails.map { |email| {email: email, password: "password"} }
-
-users = User.create(user_info)
+emails.each do |email|
+  user = User.find_or_create_by(email: email) do |u|
+    u.password = "password"
+  end
+  user.add_role :admin
+end

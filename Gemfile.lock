@@ -206,6 +206,7 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.5)
+    rolify (6.0.1)
     ruby-openai (3.7.0)
       httparty (>= 0.18.1)
     rubyzip (2.3.2)
@@ -284,6 +285,7 @@ DEPENDENCIES
   rails (~> 7.0.4, >= 7.0.4.3)
   redcarpet (~> 3.6)
   redis (~> 4.0)
+  rolify (~> 6.0)
   ruby-openai (~> 3.7)
   sass-rails (~> 6.0)
   selenium-webdriver
