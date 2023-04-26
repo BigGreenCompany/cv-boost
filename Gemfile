@@ -36,3 +36,4 @@ gem 'actiontext', require: 'action_text'
 gem "ruby-openai", "~> 3.7"
 gem "faker"
 gem "redcarpet", "~> 3.6"
+gem "ahoy_matey", "~> 4.2"
