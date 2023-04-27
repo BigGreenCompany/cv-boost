@@ -7,7 +7,8 @@ class User < ApplicationRecord
          :rememberable,
          :validatable,
          :trackable,
-         :omniauthable
+         :omniauthable,
+         omniauth_providers: [:linkedin]
 
   has_many :experiences, dependent: :destroy
   has_many :job_listings, dependent: :destroy

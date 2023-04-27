@@ -1,4 +1,4 @@
-class OmniauthCallbacksController < ApplicationController
+class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def linkedin
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
@@ -9,5 +9,10 @@ class OmniauthCallbacksController < ApplicationController
       session["devise.linkedin_data"] = request.env["omniauth.auth"]
       redirect_to new_user_registration_url
     end
+  end
+
+  def failure
+    flash[:error] = 'There was a problem signing you in. Please register or try signing in later.'
+    redirect_to new_user_registration_url
   end
 end
