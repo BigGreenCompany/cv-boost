@@ -6,9 +6,9 @@ module User::Omniauthable
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.email = auth.info.email
         user.password = Devise.friendly_token[0,20]
-        user.name = auth.info.name
-        user.linkedin_image_url = auth.info.image
-        user.linkedin_url = auth.extra.raw_info.publicProfileUrl
+        user.first_name = auth.info.first_name
+        user.last_name = auth.info.last_name
+        user.image_url = auth.info.picture_url
       end
     end
   end
