@@ -7,6 +7,14 @@ class JobListing < ApplicationRecord
     contract: "contract"
   }
 
+  enum application_status: {
+    open: "open",
+    sent: "sent",
+    interviewing: "interviewing",
+    offer: "offer",
+    rejected: "rejected"
+  }
+
   has_rich_text :description
 
   validates :title, presence: true

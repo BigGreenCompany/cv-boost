@@ -31,4 +31,7 @@
       <%= job_listing.description %>
     </p>
   </div>
+  <div class="card-footer">
+    <%= JobListing.application_statuses.dig(job_listing.application_status).titleize %>
+  </div>
 </div>

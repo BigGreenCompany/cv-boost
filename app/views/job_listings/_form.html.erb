@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <div>
+    <%= form.label :external_url, class: "form-label" %>
+    <%= form.url_field :external_url, class: "form-control" %>
+  </div>
 
   <div>
     <%= form.label :title, class: "form-label" %>
@@ -33,8 +37,8 @@
   </div>
 
   <div>
-    <%= form.label :external_url, class: "form-label" %>
-    <%= form.url_field :external_url, class: "form-control" %>
+    <%= form.label :application_status %>
+    <%= form.select :application_status, JobListing.application_statuses.collect{ |k, v| [v, k]}, {}, class: "form-control" %>
   </div>
 
   <div>
