@@ -13,7 +13,8 @@ class JobListing < ApplicationRecord
     sent: "sent",
     interviewing: "interviewing",
     offer: "offer",
-    rejected: "rejected"
+    rejected: "rejected",
+    closed: "closed"
   }
 
   has_rich_text :description
