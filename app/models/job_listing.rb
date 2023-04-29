@@ -1,4 +1,5 @@
 class JobListing < ApplicationRecord
+  has_paper_trail skip: [:created_at, :updated_at]
   belongs_to :user
 
   enum job_type: {

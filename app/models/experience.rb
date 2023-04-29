@@ -1,4 +1,6 @@
 class Experience < ApplicationRecord
+  has_paper_trail skip: [:created_at, :updated_at]
+
   belongs_to :user
   belongs_to :job_listing, optional: true
   has_many :ai_messages, dependent: :destroy
