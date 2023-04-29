@@ -7,10 +7,10 @@
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <%= link_to "Experiences", experiences_path, class: "nav-link #{("active" if current_page?(experiences_path))}" %>
+          <%= link_to "Experiences", experiences_path, class: "nav-link #{("active" if controller_name == 'experiences')}" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Job Listings", job_listings_path, class: "nav-link #{("active" if current_page?(job_listings_path))}" %>
+          <%= link_to "Job Listings", job_listings_path, class: "nav-link #{("active" if controller_name == 'job_listings')}" %>
         </li>
         <% if current_user.has_role? :admin %>
           <li class="nav-item">
