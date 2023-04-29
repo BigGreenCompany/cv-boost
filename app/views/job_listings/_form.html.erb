@@ -33,12 +33,12 @@
 
   <div>
     <%= form.label :job_type %>
-    <%= form.select :job_type, JobListing.job_types.collect{ |k, v| [v, k]}, {}, class: "form-control" %>
+    <%= form.select :job_type, JobListing.job_types.collect{ |k, v| [v.titleize, k]}, {}, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :application_status %>
-    <%= form.select :application_status, JobListing.application_statuses.collect{ |k, v| [v, k]}, {}, class: "form-control" %>
+    <%= form.select :application_status, JobListing.application_statuses.collect{ |k, v| [v.titleize, k]}, {}, class: "form-control" %>
   </div>
 
   <div>
