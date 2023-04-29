@@ -2,10 +2,20 @@
 
 one:
   experience: one
-  role: MyString
-  content: MyText
+  role: assistant
+  content: How can I help you?
 
 two:
   experience: two
-  role: MyString
-  content: MyText
+  role: assistant
+  content: How can I help you?
+
+three:
+  experience: three
+  role: assistant
+  content: How can I help you?
+
+four:
+  experience: four
+  role: assistant
+  content: How can I help you?

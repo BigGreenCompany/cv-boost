@@ -1,7 +1,9 @@
 require "test_helper"
 
 class ExperienceTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "fixture data is valid" do
+    Experience.all.each do |experience|
+      assert experience.valid?, "#{experience.errors.full_messages}"
+    end
+  end
 end

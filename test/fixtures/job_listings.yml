@@ -1,17 +1,33 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   user: one
-  title: MyString
-  employer: MyString
-  location: MyString
-  job_type: MyString
-  description: MyText
+  title: Software Developer
+  employer: Big Software Co
+  location: Chicago, IL
+  job_type: full time
+  application_status: open
 
 two:
   user: two
-  title: MyString
-  employer: MyString
-  location: MyString
-  job_type: MyString
-  description: MyText
+  title: Software Engineer
+  employer: Two Rivers Management Inc.
+  location: New York City, NY
+  job_type: part time
+  application_status: sent
+
+three:
+  user: three
+  title: Program Manager
+  employer: Hollywood Enterprises
+  location: Los Angeles, CA
+  job_type: contract
+  application_status: interviewing
+
+four:
+  user: four
+  title: Team Educator
+  employer: Mousey Features
+  location: Orlando, FL
+  job_type: full time
+  application_status: offer

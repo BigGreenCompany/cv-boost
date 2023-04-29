@@ -1,4 +1,197 @@
-# one:
-#   record: name_of_fixture (ClassOfFixture)
-#   name: content
-#   body: <p>In a <i>million</i> stars!</p>
+one:
+  record: one (Experience)
+  name: description
+  body: |
+    <ul>
+      <li>Analyzed networking systems and improved functionality by two points</li>
+      <li>Worked with team of 20 developers to improve software capabilities for corporate clients</li>
+      <li>Wrote proprietary software for over 50 clients</li>
+      <li>Maintained systems for 25 different clients using C++ and Linux platforms</li>
+    </ul>
+
+two:
+  record: two (Experience)
+  name: description
+  body: |
+    <ul>
+      <li>Integrate code changes, test code changes, and document code changes</li>
+      <li>Developed Perl and PHP scripts to translate data between applications</li>
+      <li>Developed automation scripts to test storage appliances in Python</li>
+      <li>Practice agile development methodologies and work with current networking technologies</li>
+    </ul>
+
+three:
+  record: three (Experience)
+  name: description
+  body: |
+    <ul>
+      <li>Implement maintenance and enhancement requests</li>
+      <li>Collaborate with customers and vendors to ensure high-quality products that adhere to schedule timelines and meet budget guidelines</li>
+      <li>Develop design documents, user guides, maintenance documents, project documentation, and release documents</li>
+      <li>Liaise between internal and external team members and customers</li>
+    </ul>
+
+four:
+  record: four (Experience)
+  name: description
+  body: |
+    <ul>
+      <li>Develop and lead state-approved curriculum, incorporating innovative lesson strategies and consistently leading students that produce grades 5% higher than their peers</li>
+      <li>Incorporate hands-on team activities to encourage collaboration and analytical thinking skills</li>
+      <li>Spearheaded development of electronic monthly newsletter designed to inform parents of classroom and school activities, increasing parent involvement in extracurricular activities by 30%</li>
+    </ul>
+
+five:
+  record: one (JobListing)
+  name: description
+  body: |
+    <p>
+      Karagozian & Case, Inc. (K&C) is an internationally recognized science and engineering consulting firm that
+      was founded in 1945. K&C's mission is to be the leader in innovating and fielding: 1) engineering software
+      tools, 2) high-fidelity physics-based computational tools, 3) structural and mechanical systems, and 4)
+      engineering services by leveraging state-of-the-art research, analysis, and design methods. K&C serves
+      clients in the defense, counterterrorism, construction, manufacturing, space, energy, and insurance
+      industries. Our strength lies in our team of experts and our culture of collaboration.
+      K&C's services commonly fall into the following functional areas of expertise.
+    </p>
+    <ul>
+      <li>Modeling, simulation, and analysis.</li>
+      <li>Applied research and testing.</li>
+      <li>Product and software development.</li>
+      <li>Protective design.</li>
+      <li>Threat and vulnerability assessments.</li>
+    </ul>
+
+six:
+  record: two (JobListing)
+  name: description
+  body: |
+    <ul>
+      <li>2+ years of JavaScript experience</li>
+      <li>Proficiency with JS frameworks such as React or Vue</li>
+      <li>Proficiency with HTML and CSS</li>
+      <li>Proficiency with Git source control</li>
+      <li>Plus: strong eye for UI design</li>
+      <li>Plus: public Github or portfolio of previous projects</li>
+      <li>Passion for building and shipping product quickly</li>
+      <li>Attention to code quality and security
+      <li>Thrives in an early stage startup setting</li>
+      <li>Comfortable working remotely with a bias towards written communication</li>
+    </ul>
+
+seven:
+  record: three (JobListing)
+  name: description
+  body: |
+    <div>
+      The Provider Partnerships Team is responsible for managing high integrity relationships with providers in the assigned region to optimize performance. The outcome of being the ideal partner for our providers will be to improve costs, quality, and services, in addition to membership growth in services to our communities across all lines of businesses. The Program Manager, Consultant will report to the Sr. Director, Provider Partnerships. In this role you will be r esponsible for the overall relationship and performance of assigned providers within the region which includes but is not limited to the financial and programmatic components of provider facing work efforts central to building a high quality, financially sustainable healthcare system worthy of family and friends. Consulting with all levels of management, including senior leadership, to make strategic, data-driven recommendations and influence decision-making, with particular focus on strategic partners .
+    </div>
+    <h3>Your Work</h3>
+
+    <p>
+      In this role, you will:
+
+      Manage multiple provider collaborations to achieve Blue Shield of California goals in the areas of financial sustainability, Quality performance, membership growth, provider satisfaction, communication, and data integration, equating to overall programmatic success
+      Act as subject matter expert in all programmatic work efforts by acting as the primary point of contact for assigned groups, addressing the provider's holistic needs while navigating complex and matrixed internal workflows and relationships. This includes both administrative and strategic work
+      Working with the Sr. Director, Provider Partnerships to lead efforts that address root cause of operational challenges that a provider may be having when interfacing with Blue Shield of California (areas include but are not limited to transfer of reports, encounter data submission, claims payment issues, DOFR challenges)
+      Validate financial reporting (analysis and forecasts) and provide ongoing reconciliation of resources by using reports, data feeds, and other tracking materials
+      Report regularly and clearly on the overall status of assigned providers
+      Make strategic recommendations, as the provider subject matter expert, that encompass their assigned sub-region in matters of growth, quality, provider satisfaction, and financial sustainability
+      Understand and lead efforts in areas that span all aspects of Blue Shield's key priorities, inclusive of scaling innovation efforts, achieving Medicare, Medi-Cal, Trio and Tandem growth targets, improving provider satisfaction scores, and supporting providers to hit cost targets and Quality incentives
+      Lead presentations to both internal and external audiences that may cover detailed, technical content as well as high-level strategic insights
+      Ability to travel 25%-30% within Southern California with occasional travel to the Bay Area (barring COVID restrictions)
+      Take on other duties as assigned
+    </p>
+
+    <div>
+      QUALIFICATIONS
+      Your Knowledge and Experience
+
+      Requires a Bachelor's degree or equivalent experience
+      Requires at least 7 years of prior relevant experience
+      A minimum of 5 years of health insurance or at a major healthcare system experience. Must include a minimum of 2 years of managed care network management, project management or program management experience; healthcare consulting in the areas of cost of healthcare management, utilization management, or program implementation. Previous experience as a managed care contractor and/or provider relations preferred
+      Technically proficient in Microsoft Excel, with the ability to use pivot tables, formulas, and visual functions to display data. Additionally, proficient in Microsoft Word, and PowerPoint, with the ability to draft documents to be distributed and presented to Leadership
+      Must be a critical thinker, detail-oriented, exhibit exceptional communication skill in writing and in-person and have the ability to track performance and deliverables with the ability to understand and translate basic statistical principles to audiences in areas such as sample sizes, confounding factors, error types, and study types
+      Deep understanding of basic quantitative principles such as profit margins, budgets, and data tables. This includes an understanding of healthcare funding mechanisms, managed care provider compensation and product types; including but not limited to risk sharing and value-based care arrangements. Basic understanding of UM and Quality metrics, programs, and inputs such as HEDIS, CAHPS, Medicare Stars, NCQA
+    </div>
+
+eight:
+  record: four (JobListing)
+  name: description
+  body: |
+    <h3>ABOUT US</h3>
+    <p>
+      Bright Star Schools is a free, publicly funded and open enrollment non-profit organization with nine public charters in urban Los Angeles. Across all of our Bright Star sites, over 90% of our students are eligible for free and reduced lunch.
+      Our mission is to provide holistic, inclusive support for all students to achieve academic excellence and grow their unique talents so that they find joy in higher education, career, and life. Bright Star students will become leaders who act with integrity and champion equity to enrich our communities and the world. The framework to our success is our core operating principles, which are Integridad, Ubuntu, Kohyang (고향), and Growth.
+      At Bright Star, we're committed to our educators' success. We provide over 260 hours of differentiated professional development each year and offer numerous leadership opportunities to support our teachers to become experts in their craft. We also offer small class sizes, comprehensive teacher support, and numerous collaboration opportunities across the organization and within school sites.
+      Educator applicants should be prepared to conduct classes virtually or in-person depending on COVID-19 health guidelines.
+    </p>
+    <div>
+      Bright Star Schools is an Equal Opportunity Employer and does not discriminate on the basis of race, color, religion, gender, sexual
+      orientation, national or ethnic origin, age, disability, pregnancy, or veteran status.
+
+      Qualifications & Experience:
+      <ul>
+        <li>Bachelor's degree</li>
+        <li>Single Subject CA Foundational-Level General Science Credential or a Specialized Science Credential</li>
+        <li>Candidates with an intern credential are also considered</li>
+        <li>Two years of urban teaching experience preferred</li>
+        <li>Bilingual in Spanish and/or Korean is desirable but not required</li>
+        <li>Possession of either an English Learner Authorization (EL Authorization), Bilingual, Cross-Cultural, Language and Academic Development (BCLAD) certificate; Cross-Cultural, Language and Academic Development (CLAD) certificate; or Bilingual Certificate of Competence (BCC) required.</li>
+      </ul>
+
+      Teacher Traits:
+      <ul>
+        <li>Belief that every child deserves an excellent education which prepares him/her for college and life beyond</li>
+        <li>Demonstrated ability to teach the whole child in an inclusive setting using modifications and accommodations</li>
+        <li>Willingness to receive feedback, engage in frequent dialogue, and ability to self-reflect</li>
+        <li>Life-long learner</li>
+        <li>Collaborative</li>
+        <li>Firmly committed to ensuring that every student is able to achieve a rigorous expectations and curriculum</li>
+        <li>Firmly committed to creating an anti-racist, anti-biased, and equitable classroom environment</li>
+        <li>Belief in data-driven instruction</li>
+        <li>Firm, kind approach to managing student behavior</li>
+        <li>Technologically competent</li>
+        <li>Entrepreneurial spirit and creative problem solver</li>
+        <li>Sense of humor and love of teaching</li>
+      </ul>
+
+      Responsibilities:
+
+      <ul>
+       <li>Whole School Responsibilities</li>
+        <li>Uphold Bright Star Schools' mission and values</li>
+        <li>Demonstrate genuine care for all students</li>
+        <li>Build relationships with all students</li>
+        <li>Embrace existing school-wide management systems and promote high standards of behavior</li>
+        <li>Collaborate with school leaders, providing input to improve Bright Star programs</li>
+        <li>Actively participate in professional development sessions</li>
+        <li>Communicate professionally with peers, supervisors, parents, and students</li>
+        <li>Adhere to Bright Star's professional attire guidelines</li>
+        <li>Supervise bathroom breaks and participate in rotating detention supervision</li>
+        <li>Uphold attendance procedures each period using School Information Systems (SIS)</li>
+        <li>Enthusiastically participate in school-wide culture events (i.e., Songfest, academic assemblies, and Field Day)</li>
+        <li>Perform other duties as assigned</li>
+      </ul>
+
+      Instructional Responsibilities
+
+      <ul>
+        <li>Implement and execute the adopted Bright Star curriculum maps and guidelines, as well as instructional best practices (educators should be prepared to conduct classes virtually or in-person depending on COVID-19 health guidelines)</li>
+        <li>Create and submit weekly lesson plans/overviews to administrator/coach</li>
+        <li>Use California State and/or California Common Core standards to plan rigorous lessons</li>
+        <li>Differentiate lesson plans for a variety of learners (kinesthetic, gifted students, English Language Learners, and/or students with IEPs, etc.)</li>
+        <li>Employ strategies to get to know and understand students and prioritize culturally responsive teaching</li>
+        <li>Participate fully in weekly instructional coaching activities (including analysis of student learning, intellectual prep, observation debrief, etc.) and execute on next steps from the weekly coaching meeting. These meetings will be 45 minutes to an hour weekly with your matched coach.</li>
+        <li>Implement feedback from administrator(s) regarding lesson plans and/or execution</li>
+        <li>Establish and maintain positive classroom environment</li>
+        <li>Implement an aligned instructional program to support students in meeting grade level, school, and district goals</li>
+        <li>Support instruction with school-wide supplemental programs</li>
+        <li>Maintain gradebooks and meet grading reporting deadlines</li>
+        <li>Communicate with families regarding student academics and behavior</li>
+        <li>Collaborate with Inclusive Education (Special Education) Team</li>
+        <li>Use planning periods for the advancement of students' instructional needs</li>
+        <li>Tutor students in need of remediation</li>
+        <li>Perform other adjunct duties</li>
+      </ul>
+      </div>
