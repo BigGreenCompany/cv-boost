@@ -43,3 +43,4 @@ gem "omniauth-linkedin-oauth2", "~> 1.0"
 gem "omniauth-rails_csrf_protection"
 gem 'airbrake', '~> 13.0', '>= 13.0.3'
 gem "paper_trail", "~> 14.0"
+gem "meta-tags", '~> 2.18'
