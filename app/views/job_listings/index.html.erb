@@ -10,9 +10,9 @@
       <% @job_listings.each do |job_listing| %>
         <%= link_to job_listing, class: "list-group-item d-flex align-items-center" do %>
           <div class="me-auto">
-            <div class="badge bg-light text-dark me-2">
-              <%= JobListing.application_statuses.dig(job_listing.application_status) %>
-            </div>
+            <%= content_tag :span, class: "badge text-bg-#{application_status_color(job_listing)} me-2" do %>
+              <%= job_listing.application_status %>
+            <% end %>
             <span class="fw-bold me-2"><%= job_listing.employer %></span>
             <span><%= job_listing.title %></span>
           </div>

@@ -32,6 +32,8 @@
     </p>
   </div>
   <div class="card-footer">
-    <%= JobListing.application_statuses.dig(job_listing.application_status).titleize %>
+    <%= content_tag :span, class: "badge text-bg-#{application_status_color(job_listing)}" do %>
+      <%= job_listing.application_status %>
+    <% end %>
   </div>
 </div>
