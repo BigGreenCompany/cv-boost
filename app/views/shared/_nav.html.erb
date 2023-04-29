@@ -21,10 +21,15 @@
       <hr/>
       <ul class="navbar-nav">
         <% if current_user.present? %>
-          <li class="nav-item">
-            <%= link_to "#{current_user.email}", edit_user_registration_path, class: "nav-link #{("active" if current_page?(edit_user_registration_path))}" %>
+          <li class="nav-item d-flex">
+            <%= link_to edit_user_registration_path, class: "nav-link #{("active" if current_page?(edit_user_registration_path))}" do %>
+              <% if current_user.image_url.present? %>
+                <img class="rounded-circle me-1" alt="user profile image" src="<%= current_user.image_url %>" style="width: 3rem">
+              <% end %>
+              <%= current_user.email %>
+            <% end %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item my-auto">
             <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link btn btn-link" %>
           </li>
         <% else %>
