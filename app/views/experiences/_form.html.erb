@@ -11,47 +11,48 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :place, class: "form-label" %>
     <%= form.text_field :place, class: "form-control" %>
   </div>
 
-    <div>
+  <div class="mb-3">
     <%= form.label :title, class: "form-label" %>
     <%= form.text_field :title, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :started_at, class: "form-label" %>
     <%= form.date_field :started_at, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :ended_at, class: "form-label" %>
     <%= form.date_field :ended_at, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :location, class: "form-label" %>
     <%= form.text_field :location, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :description, class: "form-label" %>
     <%= form.rich_text_area :description, id: "experience-description-rich-text-area", class: "form-control", data: { "action-text-attachment-include": false } %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :category, class: "form-label" %>
     <%= form.select :category, Experience.categories.to_a, {}, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :job_listing, class: "form-label" %>
-    <%= form.select :job_listing_id, current_user.job_listings.collect {|job| [ job.to_s, job.id ] }, { include_blank: true }, class: "form-control" %>
+    <%= form.select :job_listing_id, current_user.job_listings.collect {|job| [ job.to_s, job.id ] }, { include_blank: true }, class: "form-control", 'aria-describedby':"experience-job-listing-help" %>
+    <div id="experience-job-listing-help" class="form-text">We'll use this job listing to generate suggestions on how to best describe this experience</small>
   </div>
 
-  <div>
-    <%= form.submit "Save", class: "btn btn-primary my-3 w-100" %>
+  <div class="my-3">
+    <%= form.submit "Save", class: "btn btn-primary w-100" %>
   </div>
 <% end %>

@@ -11,42 +11,42 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :external_url, class: "form-label" %>
     <%= form.url_field :external_url, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :title, class: "form-label" %>
     <%= form.text_field :title, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :employer, class: "form-label" %>
     <%= form.text_field :employer, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :location, class: "form-label" %>
     <%= form.text_field :location, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :job_type %>
     <%= form.select :job_type, JobListing.job_types.collect{ |k, v| [v.titleize, k]}, {}, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :application_status %>
     <%= form.select :application_status, JobListing.application_statuses.collect{ |k, v| [v.titleize, k]}, {}, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :description, class: "form-label" %>
     <%= form.rich_text_area :description, class: "form-control", id: "job-listing-description-rich-text-area" %>
   </div>
 
-  <div>
-    <%= form.submit "Save", class: "btn btn-primary my-3 w-100" %>
+  <div class="my-3">
+    <%= form.submit "Save", class: "btn btn-primary w-100" %>
   </div>
 <% end %>
