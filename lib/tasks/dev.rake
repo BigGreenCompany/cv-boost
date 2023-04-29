@@ -13,7 +13,7 @@ namespace :dev do
 
   desc "Hydrate the database with sample data"
   task prime: :environment do
-    usernames = %w[alice bob carol dave edith frank gal harry jackie kyle ian queenie turkey]
+    usernames = %w[alice bob carol david]
 
     users = []
 
