@@ -76,6 +76,10 @@ GEM
       activesupport (>= 5.2)
       device_detector
       safely_block (>= 0.2.1)
+    airbrake (13.0.3)
+      airbrake-ruby (~> 6.0)
+    airbrake-ruby (6.2.1)
+      rbtree3 (~> 0.6)
     autoprefixer-rails (10.4.13.0)
       execjs (~> 2)
     bcrypt (3.1.18)
@@ -247,6 +251,7 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    rbtree3 (0.7.1)
     redcarpet (3.6.0)
     redis (4.8.1)
     regexp_parser (2.8.0)
@@ -326,6 +331,7 @@ PLATFORMS
 DEPENDENCIES
   actiontext
   ahoy_matey (~> 4.2)
+  airbrake (~> 13.0, >= 13.0.3)
   bootsnap
   bootstrap (~> 5.2, >= 5.2.3)
   capybara

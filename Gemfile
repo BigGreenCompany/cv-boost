@@ -41,3 +41,4 @@ gem "rolify", "~> 6.0"
 gem "rails_admin", "~> 3.1"
 gem "omniauth-linkedin-oauth2", "~> 1.0"
 gem "omniauth-rails_csrf_protection"
+gem 'airbrake', '~> 13.0', '>= 13.0.3'
