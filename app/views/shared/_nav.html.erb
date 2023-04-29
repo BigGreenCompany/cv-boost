@@ -12,7 +12,7 @@
         <li class="nav-item">
           <%= link_to "Job Listings", job_listings_path, class: "nav-link #{("active" if controller_name == 'job_listings')}" %>
         </li>
-        <% if current_user.has_role? :admin %>
+        <% if current_user&.has_role? :admin %>
           <li class="nav-item">
             <%= link_to "Admin", rails_admin_path, class: "nav-link" %>
           </li>
