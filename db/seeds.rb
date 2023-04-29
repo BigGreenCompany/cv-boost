@@ -13,6 +13,7 @@ emails = %w[
 emails.each do |email|
   user = User.find_or_create_by(email: email) do |u|
     u.password = "password"
+    u.image_url = "https://picsum.photos/200"
   end
   user.add_role :admin
 end
