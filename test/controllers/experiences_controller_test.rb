@@ -1,8 +1,12 @@
 require "test_helper"
 
 class ExperiencesControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @experience = experiences(:one)
+    @user = users(:one)
+    sign_in @user
   end
 
   test "should get index" do
@@ -17,7 +21,14 @@ class ExperiencesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create experience" do
     assert_difference("Experience.count") do
-      post experiences_url, params: { experience: { category: @experience.category, description: @experience.description, ended_at: @experience.ended_at, location: @experience.location, place: @experience.place, started_at: @experience.started_at, user_id: @experience.user_id } }
+      post experiences_url, params: {
+        experience: {
+          started_at: @experience.started_at,
+          place: @experience.place,
+          title: @experience.title,
+          description: @experience.description
+        }
+      }
     end
 
     assert_redirected_to experience_url(Experience.last)
