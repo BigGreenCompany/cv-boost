@@ -21,3 +21,11 @@ four:
   first_name: "david"
   last_name: "example"
   image_url: "https://picsum.photos/200"
+
+linkedin:
+  uid: "12345"
+  provider: "linkedin"
+  email: "edith@example.com"
+  first_name: "edith"
+  last_name: "example"
+  image_url: "https://picsum.photos/200"
