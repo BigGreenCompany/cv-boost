@@ -1,6 +1,7 @@
 class JobListing < ApplicationRecord
   has_paper_trail skip: [:created_at, :updated_at]
   belongs_to :user
+  has_many :experiences, dependent: :nullify
 
   enum job_type: {
     full_time: "full time",
