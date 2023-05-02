@@ -39,7 +39,9 @@ gem "redcarpet", "~> 3.6"
 gem "ahoy_matey", "~> 4.2"
 gem "rolify", "~> 6.0"
 gem "rails_admin", "~> 3.1"
-gem "omniauth-linkedin-oauth2", "~> 1.0"
+# Fetching directly from git because this fix it not in gem version 1.0
+# https://github.com/decioferreira/omniauth-linkedin-oauth2/issues/70#issuecomment-1484556262
+gem "omniauth-linkedin-oauth2", git: "https://github.com/decioferreira/omniauth-linkedin-oauth2.git", branch: "master"
 gem "omniauth-rails_csrf_protection"
 gem 'airbrake', '~> 13.0', '>= 13.0.3'
 gem "paper_trail", "~> 14.0"
