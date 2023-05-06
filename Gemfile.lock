@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/decioferreira/omniauth-linkedin-oauth2.git
+  revision: c93a1208b45b0e22e3666eabaf8b63b75f94115a
+  branch: master
+  specs:
+    omniauth-linkedin-oauth2 (1.0.0)
+      omniauth-oauth2
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -198,8 +206,6 @@ GEM
       hashie (>= 3.4.6)
       rack (>= 2.2.3)
       rack-protection
-    omniauth-linkedin-oauth2 (1.0.0)
-      omniauth-oauth2
     omniauth-oauth2 (1.8.0)
       oauth2 (>= 1.4, < 3)
       omniauth (~> 2.0)
@@ -348,7 +354,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   meta-tags (~> 2.18)
-  omniauth-linkedin-oauth2 (~> 1.0)
+  omniauth-linkedin-oauth2!
   omniauth-rails_csrf_protection
   paper_trail (~> 14.0)
   pg (~> 1.1)
