@@ -4,7 +4,10 @@
       <i class="fa-solid fa-arrow-left fa-2xl"></i>
     <% end %>
   </div>
-  <%= render @experience %>
+  <%= turbo_stream_from dom_id(@experience) %>
+  <%= turbo_frame_tag dom_id(@experience) do %>
+    <%= render @experience %>
+  <% end %>
   <div id="experience-<%= @experience.id %>-ai-messages" class="my-3">
     <%= render @experience.ai_messages %>
   </div>
