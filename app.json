@@ -1,35 +1,38 @@
 {
-    "name": "cv-boost",
-    "description": "A tool to get feedback from a trained AI model to improve your resume",
-    "keywords": ["rails", "postgresql"],
-    "repository": "https://github.com/BigGreenCompany/cv_boost",
-    "env": {
-      "RACK_ENV": {
-        "value": "production"
-      },
-      "RAILS_ENV": {
-        "value": "production"
-      },
-      "DATABASE_URL": {
-        "required": true
-      },
-      "SECRET_KEY_BASE": {
-        "required": true
-      }
+  "name": "cv-boost",
+  "description": "A tool to get feedback from a trained AI model to improve your resume",
+  "keywords": [
+    "rails",
+    "postgresql"
+  ],
+  "repository": "https://github.com/BigGreenCompany/cv_boost",
+  "env": {
+    "RACK_ENV": {
+      "value": "production"
     },
-    "addons": [
-      "heroku-postgresql:mini"
-    ],
-    "buildpacks": [
-      {
-        "url": "https://github.com/heroku/heroku-buildpack-apt"
-      },
-      {
-        "url": "heroku/ruby"
-      }
-    ],
-    "scripts": {
-      "postdeploy": "rails db:migrate"
+    "RAILS_ENV": {
+      "value": "production"
+    },
+    "DATABASE_URL": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "required": true
     }
+  },
+  "addons": [
+    "heroku-postgresql:mini",
+    "heroku-redis:mini"
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-apt"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ],
+  "scripts": {
+    "postdeploy": "rails db:migrate"
   }
-  
+}
