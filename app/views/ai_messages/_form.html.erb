@@ -1,18 +1,18 @@
-<%= form_with(model: [@experience, ai_message], data: { controller: "ai-message-form", action: "keydown->ai-message-form#submitOnEnter" }) do |form| %>
-  <% if ai_message.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(ai_message.errors.count, "error") %> prohibited this ai_message from being saved:</h2>
-
-      <ul>
-        <% ai_message.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<%= form_with(model: [@experience, @ai_message],
+              data: { controller: 'ai-message-form', action: 'turbo:submit-end->ai-message-form#reset' }) do |form| %>
+  <div class="input-group">
+    <%= form.text_area :content,
+                       id: 'ai_message_content',
+                       rows: 2,
+                       class: "form-control",
+                       placeholder: "How can I improve this description?",
+                       "aria-label": "Ask AI for feedback on this experience" %>
+    <%= form.submit "Send", class: "btn btn-primary",
+                            'data-ai-message-form-target': 'button' %>
+  </div>
+  <% @ai_message.errors.each do |error| %>
+    <div class="text-danger mt-2">
+      <span class="help-block"><%= error.full_message %></span>
     </div>
   <% end %>
-
-  <div class="input-group mb-3">
-    <%= form.text_area :content, rows: 2, class: "form-control", placeholder: "How can I improve this description?" %>
-    <%= form.submit "Send", class: "btn btn-primary" %>
-  </div>
 <% end %>

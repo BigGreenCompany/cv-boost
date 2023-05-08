@@ -16,6 +16,8 @@ class AiMessage < ApplicationRecord
 
   after_create :query_chat_gpt
 
+  broadcasts_to :experience
+
   private
 
   def query_chat_gpt
