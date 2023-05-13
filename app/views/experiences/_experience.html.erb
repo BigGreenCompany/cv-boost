@@ -30,7 +30,7 @@
   </div>
   <div class="card-footer">
     <% if experience.job_listing.present? %>
-      Applying for <%= link_to experience.job_listing %>
+      Applying for <%= link_to experience.job_listing, job_listing_path(experience.job_listing), data: { turbo: false } %>
     <% else %>
       Add a job listing to this experience for custom tailored suggestions.
     <% end %>
