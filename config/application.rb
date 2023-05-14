@@ -11,6 +11,10 @@ module CvBoost
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    # fix for adding div.field-with-errors around input after validation
+    # https://stackoverflow.com/a/5268112/4244462
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -18,5 +22,7 @@ module CvBoost
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.active_job.queue_adapter = :sidekiq
   end
 end

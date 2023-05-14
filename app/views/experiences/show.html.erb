@@ -1,15 +1,15 @@
+<%= turbo_stream_from @experience %>
 <div class="container my-5">
   <div class="mb-2">
     <%= link_to experiences_path do %>
       <i class="fa-solid fa-arrow-left fa-2xl"></i>
     <% end %>
   </div>
-  <%= turbo_stream_from dom_id(@experience) %>
   <%= turbo_frame_tag dom_id(@experience) do %>
     <%= render @experience %>
   <% end %>
-  <div id="experience-<%= @experience.id %>-ai-messages" class="my-3">
+  <div id="ai_messages">
     <%= render @experience.ai_messages %>
   </div>
-  <%= render "ai_messages/form", ai_message: @experience.ai_messages.new %>
+  <%= turbo_frame_tag "new_ai_message", src: new_experience_ai_message_path(@experience), target: :_top %>
 </div>

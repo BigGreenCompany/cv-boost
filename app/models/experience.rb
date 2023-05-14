@@ -5,6 +5,8 @@ class Experience < ApplicationRecord
   belongs_to :job_listing, optional: true
   has_many :ai_messages, dependent: :destroy
 
+  broadcasts
+
   enum category: {
     work: "work",
     education: "education"

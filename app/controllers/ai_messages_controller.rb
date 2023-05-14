@@ -26,16 +26,15 @@ class AiMessagesController < ApplicationController
 
     respond_to do |format|
       if @ai_message.save
+        format.turbo_stream { render turbo_stream: turbo_stream.append("ai_messages", @ai_message) }
         format.html { redirect_to experience_url(@experience), notice: "Ai message was successfully created." }
         format.json { render :show, status: :created, location: @ai_message }
       else
+        format.turbo_stream { render turbo_stream: turbo_stream.replace(@ai_message, partial: "ai_messages/form", locals: { ai_message: @ai_message }) }
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @ai_message.errors, status: :unprocessable_entity }
       end
     end
-  rescue AiMessage::OpenAiError => e
-    flash[:alert] = e.message
-    redirect_to experience_url(@experience)
   end
 
   # PATCH/PUT /ai_messages/1 or /ai_messages/1.json
@@ -56,6 +55,7 @@ class AiMessagesController < ApplicationController
     @ai_message.destroy
 
     respond_to do |format|
+      format.turbo_stream { render turbo_stream: turbo_stream.remove(@ai_message) }
       format.html { redirect_to experience_url(@experience), notice: "Ai message was successfully destroyed." }
       format.json { head :no_content }
     end

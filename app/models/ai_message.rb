@@ -1,37 +1,62 @@
 require "openai"
-
 class AiMessage < ApplicationRecord
-  class OpenAiError < StandardError
-    def message
-      "An error occurred while communicating with OpenAI. Please try again later."
-    end
-  end
-
   belongs_to :experience
 
   attribute :role, :string, default: 'user'
 
   validates :role, presence: true
-  validates :content, presence: true
+  validates :content, presence: true, if: :user_role?
 
-  after_create :query_chat_gpt
+  after_create :create_ai_message_content_job, if: :assistant_role?
+  after_create :create_assistant_message, if: :user_role?
 
-  private
+  broadcasts_to :experience
 
-  def query_chat_gpt
-    if role == "user"
-      client = OpenAI::Client.new(access_token: Rails.application.credentials.dig(:openai, :access_token))
-      response = client.chat(
-        parameters: {
-          model: "gpt-3.5-turbo",
-          # TODO: save system prompt on first message instead?
-          messages: experience.ai_messages.map{|m| {role: m.role, content: m.content} }.to_a.prepend({role: "system", content: experience.prompt}, {role: "system", content: "please respond using markdown"}),
-          temperature: 0.7
-        }
-      )
-      raise OpenAiError unless response.success?
-      ai_message = response.dig("choices", 0, "message")
-      experience.ai_messages.create(ai_message) unless ai_message.nil?
-    end
+  scope :to_role_content, -> { select(:role, :content).as_json(only: [:role, :content]) }
+
+  def create_ai_message_content_job
+    AiMessageContentJob.perform_later(self)
+  end
+
+  def create_assistant_message
+    AiMessage.create(role: "assistant", experience: experience)
+  end
+
+  def user_role?
+    role == "user"
+  end
+
+  def assistant_role?
+    role ==  "assistant"
+  end
+
+  def system_role?
+    role == "system"
+  end
+
+  def set_ai_content
+    return unless assistant_role?
+
+    response = OpenAI::Client.new.chat(
+      parameters: {
+        model: "gpt-3.5-turbo",
+        messages: previous_messages,
+        temperature: 0.7
+      }
+    )
+    raise ::OpenAI::Error.new("An error occurred while communicating with OpenAI.") unless response.success?
+    self.content = response.dig("choices", 0, "message", "content")
+    save
+  end
+
+  def prompt
+    <<~TEXT
+      #{experience.prompt}
+      Please respond using markdown.
+    TEXT
+  end
+
+  def previous_messages
+    experience.ai_messages.where("created_at < ?", created_at).to_role_content.prepend({role: "system", content: prompt})
   end
 end
