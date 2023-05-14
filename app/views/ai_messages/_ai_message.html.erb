@@ -1,7 +1,7 @@
 <div id="<%= dom_id ai_message %>">
   <div class="d-flex justify-content-between">
     <strong><%= ai_message.role %></strong>
-    <%= button_to experience_ai_message_path(@experience, ai_message),
+    <%= button_to experience_ai_message_path(ai_message.experience, ai_message),
                   method: :delete,
                   data: {
                     "turbo-method": :delete,
