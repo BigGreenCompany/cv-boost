@@ -4,20 +4,36 @@ class JobListingsController < ApplicationController
 
   # GET /job_listings or /job_listings.json
   def index
+    @breadcrumbs = [
+      {content: "Job Listings", href: job_listings_path},
+    ]
     @job_listings = current_user.job_listings.all.default_order
   end
 
   # GET /job_listings/1 or /job_listings/1.json
   def show
+    @breadcrumbs = [
+      {content: "Job Listings", href: job_listings_path},
+      {content: @job_listing.to_s}
+    ]
   end
 
   # GET /job_listings/new
   def new
+    @breadcrumbs = [
+      {content: "Job Listings", href: job_listings_path},
+      {content: "New"}
+    ]
     @job_listing = JobListing.new
   end
 
   # GET /job_listings/1/edit
   def edit
+    @breadcrumbs = [
+      {content: "Job Listings", href: job_listings_path},
+      {content: @job_listing.to_s, href: job_listing_path(@job_listing)},
+      {content: "Edit"}
+    ]
   end
 
   # POST /job_listings or /job_listings.json

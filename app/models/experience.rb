@@ -36,6 +36,10 @@ class Experience < ApplicationRecord
 
   scope :default_order, -> { order(started_at: :desc) }
 
+  def to_s
+    "#{title} at #{place}"
+  end
+
   private
 
   def description_cannot_include_attachments
