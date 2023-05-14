@@ -4,20 +4,36 @@ class ExperiencesController < ApplicationController
 
   # GET /experiences or /experiences.json
   def index
+    @breadcrumbs = [
+      {content: "Experiences", href: experiences_path},
+    ]
     @experiences = current_user.experiences.all.default_order
   end
 
   # GET /experiences/1 or /experiences/1.json
   def show
+    @breadcrumbs = [
+      {content: "Experiences", href: experiences_path},
+      {content: @experience.to_s}
+    ]
   end
 
   # GET /experiences/new
   def new
+    @breadcrumbs = [
+      {content: "Experiences", href: experiences_path},
+      {content: "New"}
+    ]
     @experience = Experience.new
   end
 
   # GET /experiences/1/edit
   def edit
+    @breadcrumbs = [
+      {content: "Experiences", href: experiences_path},
+      {content: @experience.to_s, href: experience_path(@experience)},
+      {content: "Edit"}
+    ]
   end
 
   # POST /experiences or /experiences.json

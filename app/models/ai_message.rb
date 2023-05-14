@@ -13,6 +13,7 @@ class AiMessage < ApplicationRecord
   broadcasts_to :experience
 
   scope :to_role_content, -> { select(:role, :content).as_json(only: [:role, :content]) }
+  scope :default_order, -> { order(created_at: :asc) }
 
   def create_ai_message_content_job
     AiMessageContentJob.perform_later(self)
