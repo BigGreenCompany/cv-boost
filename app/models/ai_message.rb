@@ -19,7 +19,7 @@ class AiMessage < ApplicationRecord
   end
 
   def create_assistant_message
-    AiMessage.create(role: "assistant", experience: experience)
+    AiMessageCreateJob.perform_later({role: "assistant", experience: experience})
   end
 
   def user_role?
