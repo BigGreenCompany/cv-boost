@@ -10,5 +10,13 @@
       <i class="fa-solid fa-x text-danger"></i>
     <% end %>
   </div>
-  <%= markdown ai_message.content %>
+  <% if ai_message.content.nil? %>
+    <div class="text-center my-5">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  <% else %>
+    <%= markdown ai_message.content %>
+  <% end %>
 </div>

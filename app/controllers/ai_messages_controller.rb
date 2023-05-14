@@ -1,3 +1,4 @@
+require "openai"
 class AiMessagesController < ApplicationController
   before_action :authenticate_user!, :set_experience
   before_action :set_ai_message, only: %i[ show edit update destroy ]
@@ -35,7 +36,7 @@ class AiMessagesController < ApplicationController
         format.json { render json: @ai_message.errors, status: :unprocessable_entity }
       end
     end
-  rescue AiMessage::OpenAiError => e
+  rescue ::OpenAI::Error => e
     flash[:alert] = e.message
     redirect_to experience_url(@experience)
   end
