@@ -47,3 +47,4 @@ gem 'airbrake', '~> 13.0', '>= 13.0.3'
 gem "paper_trail", "~> 14.0"
 gem "meta-tags", '~> 2.18'
 gem "sidekiq", "~> 7.1"
+gem "blazer", "~> 2.6"
