@@ -53,7 +53,7 @@ class AiMessage < ApplicationRecord
   def prompt
     <<~TEXT
       #{experience.prompt}
-      Please respond using markdown for rich text.
+      Please respond using markdown for rich text. No HTML.
     TEXT
   end
 
