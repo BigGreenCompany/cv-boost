@@ -1,12 +1,12 @@
-<% if @experience %>
+<%= turbo_frame_tag dom_id(experience) do %>
   <div id="<%= dom_id experience %>" class="card">
     <div class="card-header">
       <div class="d-flex justify-content-between align-items-center">
-        <h1 class="me-auto mb-0 h6"><%= @experience.place %></h1>
-        <%= link_to edit_experience_path(@experience), class: "me-2" do %>
+        <h1 class="me-auto mb-0 h6"><%= experience.place %></h1>
+        <%= link_to edit_experience_path(experience), class: "me-2" do %>
           <i class="fa-solid fa-pen-to-square"></i>
         <% end %>
-        <%= button_to @experience, method: :delete, data: { "turbo-method": :delete, "turbo-confirm": "Are you sure? This is NOT reversible" }, class: "btn btn-link" do %>
+        <%= button_to experience, method: :delete, data: { "turbo-method": :delete, "turbo-confirm": "Are you sure? This is NOT reversible" }, class: "btn btn-link" do %>
           <i class="fa-solid fa-trash text-danger"></i>
         <% end %>
       </div>

@@ -1,8 +1,6 @@
 <%= turbo_stream_from @experience %>
 <div class="container">
-  <%= turbo_frame_tag dom_id(@experience) do %>
-    <%= render @experience %>
-  <% end %>
+  <%= render @experience %>
   <div id="ai_messages">
     <%= render @experience.ai_messages.default_order %>
   </div>
