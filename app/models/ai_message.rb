@@ -7,8 +7,8 @@ class AiMessage < ApplicationRecord
   validates :role, presence: true
   validates :content, presence: true, if: :user_role?
 
-  after_create :create_ai_message_content_job, if: :assistant_role?
-  after_create :create_assistant_message, if: :user_role?
+  after_create_commit :create_ai_message_content_job, if: :assistant_role?
+  after_create_commit :create_assistant_message, if: :user_role?
 
   broadcasts_to :experience
 
@@ -20,7 +20,7 @@ class AiMessage < ApplicationRecord
   end
 
   def create_assistant_message
-    AiMessageCreateJob.perform_later({role: "assistant", experience: experience})
+    experience.ai_messages.create(role: "assistant")
   end
 
   def user_role?
