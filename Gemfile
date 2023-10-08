@@ -10,6 +10,7 @@ end
 group :development do
   gem "web-console"
   gem "rack-mini-profiler", require: false
+  gem "solargraph"
 end
 
 group :test do
@@ -30,7 +31,7 @@ gem "redis", "~> 4.0"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem "devise", "~> 4.9"
-gem 'bootstrap', '~> 5.2', '>= 5.2.3'
+gem "bootstrap", "5.3.1"
 gem 'sass-rails', '~> 6.0'
 gem 'actiontext', require: 'action_text'
 gem "ruby-openai", "~> 3.7"
