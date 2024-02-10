@@ -8,7 +8,7 @@ class Ahoy::Visit < ApplicationRecord
   after_create :trim_old_visits
 
   def trim_old_visits
-    Ahoy::Visit.excluding(Ahoy::Visit.order(started_at: :desc).limit(3000))
+    Ahoy::Visit.excluding(Ahoy::Visit.order(started_at: :desc).limit(2500))
                .delete_all
   end
 end
