@@ -1,7 +1,8 @@
 <%= turbo_stream_from @experience %>
 <div class="container">
   <%= render @experience %>
-  <div id="ai_messages">
+  <%= turbo_stream_from "#{dom_id(@experience)}_ai_messages" %>
+  <div id="<%= dom_id(@experience) %>_ai_messages">
     <%= render @experience.ai_messages.default_order %>
   </div>
   <%= turbo_frame_tag "new_ai_message", src: new_experience_ai_message_path(@experience), target: :_top %>
