@@ -1,15 +1,12 @@
 <div id="<%= dom_id ai_message %>">
   <div class="d-flex justify-content-between align-items-center">
     <strong><%= ai_message.role %></strong>
-    <%# FIX: issue with rendering button during turbo stream update %>
-    <%= button_to experience_ai_message_path(ai_message.experience, ai_message),
+    <%= button_to "Delete", experience_ai_message_path(ai_message.experience, ai_message),
                   method: :delete,
                   data: {
                     "turbo-method": :delete,
                     "turbo-confirm": "Are you sure you want to delete this message?" },
-                  class: "btn btn-link" do %>
-      <i class="fa-solid fa-x text-danger"></i>
-    <% end %>
+                  class: "btn btn-link" %>
   </div>
   <%= markdown ai_message.content %>
 </div>
