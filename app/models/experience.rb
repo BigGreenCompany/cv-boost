@@ -37,13 +37,12 @@ class Experience < ApplicationRecord
   end
 
   def fetch_openai_response
-    # fetch
     response = OpenAI::Client.new.chat(
       parameters: {
         model: "gpt-3.5-turbo",
         messages: ai_messages.for_openai.prepend({role: "system", content: prompt}),
         temperature: 0.7,
-        n: 1, # response per message
+        n: 1,
         stream: stream_proc,
       }
     )
