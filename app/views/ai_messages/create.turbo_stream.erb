@@ -1,0 +1,6 @@
+<%= turbo_stream.append "#{dom_id(@ai_message.experience)}_ai_messages" do %>
+  <%= render "ai_message", ai_message: @ai_message, scroll_to: true %>
+<% end %>
+<%= turbo_stream.replace "new_ai_message" do %>
+  <%= render "form", experience: @ai_message.experience %>
+<% end %>
