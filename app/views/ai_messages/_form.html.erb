@@ -2,11 +2,11 @@
               data: { controller: 'ai-message-form', action: 'turbo:submit-end->ai-message-form#reset' }) do |form| %>
   <div class="input-group">
     <%= form.text_area :content,
-                      id: 'ai_message_content',
-                      rows: 2,
-                      class: "form-control",
-                      placeholder: "How can I improve this description?",
-                      "aria-label": "Ask AI for feedback on this experience" %>
+                       id: 'ai_message_content',
+                       rows: 2,
+                       class: "form-control",
+                       placeholder: "How can I improve this description?",
+                       "aria-label": "Ask AI for feedback on this experience" %>
     <%= form.submit "Send", class: "btn btn-primary",
                             'data-ai-message-form-target': 'button' %>
   </div>
