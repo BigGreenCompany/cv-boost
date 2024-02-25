@@ -45,8 +45,12 @@ class AiMessage < ApplicationRecord
         temperature: 0.7
       }
     )
-    raise ::OpenAI::Error.new("An error occurred while communicating with OpenAI.") unless response.success?
-    self.content = response.dig("choices", 0, "message", "content")
+    raise ::OpenAI::Error.new("An error occurred while communicating with OpenAI.") unless response.key?("choices")
+
+    content_message = response.dig("choices", 0, "message", "content")
+    raise ::OpenAI::Error.new("Failed to retrieve content from OpenAI response.") unless content_message
+
+    self.content = content_message
     save
   end
 
@@ -58,6 +62,7 @@ class AiMessage < ApplicationRecord
   end
 
   def previous_messages
-    experience.ai_messages.where("created_at < ?", created_at).to_role_content.prepend({role: "system", content: prompt})
+    # TODO: fix issue with content: nil
+    experience.ai_messages.where("created_at < ?", created_at).where.not(content: nil).to_role_content.prepend({role: "system", content: prompt})
   end
 end
