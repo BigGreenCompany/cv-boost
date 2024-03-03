@@ -1,0 +1,37 @@
+<footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary mt-auto">
+  <div class="d-flex justify-content-center my-5">
+    <ul class="list-group list-group-horizontal">
+      <%# <li class="list-group-item">About</li> %>
+      <li class="list-group-item">
+        <%= link_to "https://github.com/BigGreenCompany/cv-boost", target: "_blank", class: "btn btn-link text-dark" do %>
+          Open Source
+        <% end %>
+      </li>
+      <%# <li class="list-group-item">Open Startup</li> %>
+      <%# <li class="list-group-item">Analytics</li> %>
+      <%# <li class="list-group-item">Privacy Policy</li> %>
+      <%# <li class="list-group-item">Terms and Conditions</li> %>
+    </ul>
+  </div>
+  <div class="d-flex justify-content-center my-5">
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">
+        <%= link_to "https://github.com/heratyian", target: "_blank", class: "btn btn-link text-dark" do %>
+          <i class="fa-brands fa-github"></i>
+        <% end %>
+      </li>
+      <li class="list-group-item">
+        <%
+          email_params = {
+            subject: "CV Boost Help",
+            body: "👋 Please let us know how we can help you."
+          }.to_param.gsub("+", "%20")
+        %>
+        <%= link_to "mailto:ian@biggreen.company?#{email_params}", target: "_blank", class: "btn btn-link text-dark" do %>
+          <i class="fa-regular fa-envelope"></i>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+  <p class="text-center mt-5">© <%= Time.now.year %> Big Green Company. All rights reserved.</p>
+</footer>
