@@ -20,10 +20,10 @@ group :test do
   gem "webdrivers"
 end
 
-gem "rails", "~> 7.0.4", ">= 7.0.4.3"
+gem "rails", "~> 7.1", ">= 7.1.3.2"
 gem "sprockets-rails"
 gem "pg", "~> 1.1"
-gem "puma", "~> 5.0"
+gem "puma", "~> 6.0"
 gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
@@ -35,7 +35,7 @@ gem "devise", "~> 4.9"
 gem "bootstrap", "5.3.1"
 gem 'sass-rails', '~> 6.0'
 gem 'actiontext', require: 'action_text'
-gem "ruby-openai", "~> 3.7"
+gem "ruby-openai", "~> 6.3", ">= 6.3.1"
 gem "faker"
 gem "redcarpet", "~> 3.6"
 gem "ahoy_matey", "~> 4.2"
