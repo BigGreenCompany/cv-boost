@@ -8,6 +8,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "letter_opener"
   gem "web-console"
   gem "rack-mini-profiler", require: false
   gem "solargraph"
