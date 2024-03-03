@@ -15,5 +15,6 @@
     <%= render "shared/flash" %>
     <%= render "shared/breadcrumbs" %>
     <%= yield %>
+    <%= render "shared/footer" unless current_page?(controller: :experiences) || current_page?(controller: :job_listings) %>
   </body>
 </html>
